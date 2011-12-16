@@ -1,5 +1,10 @@
-This jQuery Word and character counter plug-in allows you to count characters or words, up or down. You can set a minimum or maximum goal for the counter to reach.
+JQuery Character and Word counter plugin
+=========
+This plug-in allows you to count characters or words, up or down. You can set a minimum or maximum goal for the counter to reach. 
 
-It will insert a div with an id of the name of the input area you are counting with a "_counter" suffix. For example, if the input you want to count is called "countMe", the id of the div that keeps track of the count will be "countMe_counter".
-
-Simple? You bet your ass it is.
+  - Write a custom message for your counter
+  - Forces character/word limit on user  - 
+  - Works against copy/paster's!
+  
+  [Demo]
+  [demo]: http://qwertypants.me/counter
