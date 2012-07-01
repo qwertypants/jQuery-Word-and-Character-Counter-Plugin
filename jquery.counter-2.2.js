@@ -9,7 +9,8 @@
 				type : 'char', // {char || word}
 				count : 'down', // count {up || down} from or to the goal number
 				goal : 140, // count {to || from} this number
-				text : true, // Show description of counter
+				text : true, // Show description of counter, 
+				translation: '',
 				msg : ''
 			}, $countObj = '', countIndex = '', noLimit = false,
 			// Pass {} as first argument to preserve defaults/options for comparision
@@ -65,7 +66,7 @@
 						}
 					}
 
-					this.text = "character word left max".split(' ');
+					this.text = options.translation || "character word left max".split(' ');
 					this.chars = "s ( )".split(' ');
 					this.msg = null;
 					switch (options.type) {
