@@ -1,5 +1,5 @@
 /*! jQuery.counter.js (jQuery Character and Word Counter plugin)
- v2.1 (c) Wilkins Fernandez
+ v2.2 (c) Wilkins Fernandez
  MIT License
  */
 (function($) {
