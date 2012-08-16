@@ -66,7 +66,8 @@
 						}
 					}
 
-					this.text = options.translation || "character word left max".split(' ');
+					this.text = options.translation || "character word left max";
+					this.text = this.text.split(' ');
 					this.chars = "s ( )".split(' ');
 					this.msg = null;
 					switch (options.type) {
