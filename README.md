@@ -11,4 +11,4 @@ For example, if the input you want to count is called "awesome", the id of the d
 
 Simple? You bet your ass it is.
 
-[Demos and code samples](http://qwertypants.me/counter/)
+[Demos and code samples](http://qwertypants.github.com/jQuery-Word-and-Character-Counter-Plugin/)
