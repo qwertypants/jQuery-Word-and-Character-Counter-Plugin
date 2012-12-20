@@ -9,7 +9,9 @@
 				type : 'char', // {char || word}
 				count : 'down', // count {up || down} from or to the goal number
 				goal : 140, // count {to || from} this number
-				text : true, // Show description of counter, 
+				text : true, // Show description of counter
+				target : false, // Specify target for the counter
+				append : true, // Append target, otherwise prepend
 				translation: '',
 				msg : ''
 			}, $countObj = '', countIndex = '', noLimit = false,
@@ -22,8 +24,14 @@
 					// Check if unlimited typing is enabled
 					methods.isLimitless();
 
-					// Insert counter after text area/box
-					$('<div/>').attr('id', objID + '_counter').html("<span id=" + counterID + "/> " + methods.setMsg()).insertAfter($obj);
+					// Insert counter after or before text area/box
+					var counterDiv = $('<div/>').attr('id', objID + '_counter').html("<span id=" + counterID + "/> " + methods.setMsg());
+					if(false === options.target){
+						options.append ? counterDiv.insertAfter($obj) : counterDiv.insertBefore($obj);
+					}
+					else{// Append or Prepend counter to specified target
+						options.append ? $(options.target).append(counterDiv) : $(options.target).prepend(counterDiv);
+					}
 					// Set $countObj jQuery object
 					$countObj = $('#' + counterID);
 
