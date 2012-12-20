@@ -44,7 +44,8 @@
 					} else {
 						// If a valid DOM id is passed, append/prepend counter to specified target 
 						if($(options.target).length) {
-							options.append ? $(options.target).append(counterDiv) : $(options.target).prepend(counterDiv);
+							//options.append ? $(options.target).append(counterDiv) : $(options.target).prepend(counterDiv);
+							options.append ? counterDiv.insertAfter(options.target) : counterDiv.insertBefore(options.target);
 						} else {
 							// Default to 
 							options.append ? counterDiv.insertAfter($obj) : counterDiv.insertBefore($obj);
