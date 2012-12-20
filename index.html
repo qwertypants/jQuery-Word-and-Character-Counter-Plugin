@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<link rel="stylesheet" href="http://static.jquery.com/ui/css/base2.css" type="text/css" media="all" />
-		<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/themes/sunny/jquery-ui.css" type="text/css" media="all" />
+		<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/themes/blitzer/jquery-ui.css" type="text/css" media="all" />
 		<!--http://ajax.googleapis.com/ajax/libs/jqueryui/[UI.VERSION]/themes/[THEME-NAME]/jquery-ui.css-->
 		<link href="style.css" rel="stylesheet" type="text/css" />
 		<title>jQuery word and Character Counter Plugin</title>
@@ -17,29 +17,32 @@
 			</div>
 		</div>
 		<div id="body">
-			<h1 title="jQuery word and character counter plugin">jQuery Word and character counter plug-in! 2.2</h1>
+			<h1 title="jQuery word and character counter plugin">jQuery Word and character counter plug-in! 2.3 beta</h1>
 			<div id="tabs">
 				<ul>
 					<li>
 						<a href="#about">jQuery counter plug-in</a>
 					</li>
 					<li>
-						<a href="#default_usageInfo">default usage</a>
+						<a href="#default_usageInfo">default</a>
 					</li>
 					<li>
-						<a href="#character_count">character count</a>
+						<a href="#character_count">characters</a>
 					</li>
 					<li>
-						<a href="#word_count">word count</a>
+						<a href="#word_count">words</a>
 					</li>
 					<li>
-						<a href="#custom_message">custom message</a>
+						<a href="#custom_message">custom msg</a>
 					</li>
 					<li>
 						<a href="#infinite">infinite</a>
 					</li>
 					<li>
-						<a href="#contact">info/history</a>
+						<a href="#appTar">append/target</a>
+					</li>
+					<li>
+						<a href="#contact">info</a>
 					</li>
 				</ul>
 				<div id="about">
@@ -338,7 +341,7 @@
 					</div>
 				</div>
 				<div id="infinite">
-					<b>New in 2.1!</b>
+					<b>New in 2.1</b>
 					<p>
 						Sky is the limit! (Cheesy, I know.)
 					</p>
@@ -379,7 +382,26 @@
 					});</pre>
 					<textarea cols="60" rows="10" id="keepCountingWord"></textarea>
 				</div>
-
+				<div id="appTar">
+					Courtesy of <a href="https://github.com/Gator92">Gator92</a>
+					<b>New in 2.1</b><br>
+					<h3>Append/Target</h3>
+					<p>With these new options, you can now place the counter anywhere on the page.</p>
+					<p>You can have the counter insert before/after the input you are counting (defaults to after/<code>true</code>) by setting a boolean value to the <code>append</code> property.</p>
+					<p>You can also target any element on the page to insert the counter by passing a jQuery selector to the <code>target</code> property.</p>
+					<pre class="brush: js;">
+			            $('#append-target').counter({
+					        append: false,
+					        target: '#append-here'
+					    });</pre>
+					<p>In this example, we are using a custom <code>target</code> to move the counter. We're also setting <code>append</code> to false so that it can be above our target area.</p>
+					<div class="sample">
+						<textarea cols="40" rows="5" id="append-target"></textarea>
+					</div>
+					<div id="append-parent">
+						<div id="append-here">id = 'append-here'</div>
+					</div>
+				</div>
 				<div id="contact">
 					Log:
 					<ul>
@@ -446,6 +468,8 @@
 						Thank you.
 					</p>
 				</div>
+
+
 			</div>
 
 		</div>

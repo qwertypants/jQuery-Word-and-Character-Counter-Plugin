@@ -1,29 +1,56 @@
 /*! jQuery.counter.js (jQuery Character and Word Counter plugin)
- v2.2 (c) Wilkins Fernandez
+ v2.3 (c) Wilkins Fernandez
  MIT License
  */
 (function($) {
 	$.fn.extend({
-		counter : function(options) {
+		counter: function(options) {
 			var defaults = {
-				type : 'char', // {char || word}
-				count : 'down', // count {up || down} from or to the goal number
-				goal : 140, // count {to || from} this number
-				text : true, // Show description of counter, 
+				// {char || word}
+				type: 'char',
+				// count {up || down} from or to the goal number
+				count: 'down',
+				// count {to || from} this number
+				goal: 140,
+				// Show description of counter
+				text: true,
+				// Specify target for the counter
+				target: false,
+				// Append target, otherwise prepend
+				append: true,
+				// Provide translate text for counter message
 				translation: '',
-				msg : ''
-			}, $countObj = '', countIndex = '', noLimit = false,
-			// Pass {} as first argument to preserve defaults/options for comparision
-			options = $.extend({}, defaults, options), methods = {
-				/* Adds the counter to the page and binds counter to user input fields */
-				init : function($obj) {
-					var objID = $obj.attr('id'), counterID = objID + '_count';
+				// Custom counter message
+				msg: ''
+			};
+			var $countObj = '',
+				countIndex = '',
+				noLimit = false,
+				// Pass {} as first argument to preserve defaults/options for comparision
+				options = $.extend({}, defaults, options);
+			// Adds the counter to the page and binds counter to user input fields
+			var methods = {
+				init: function($obj) {
+					var objID = $obj.attr('id'),
+						counterID = objID + '_count';
 
 					// Check if unlimited typing is enabled
 					methods.isLimitless();
 
-					// Insert counter after text area/box
-					$('<div/>').attr('id', objID + '_counter').html("<span id=" + counterID + "/> " + methods.setMsg()).insertAfter($obj);
+					// Insert counter after or before text area/box
+					var counterDiv = $('<div/>').attr('id', objID + '_counter').html("<span id=" + counterID + "/> " + methods.setMsg());
+					if(!options.target) {
+						options.append ? counterDiv.insertAfter($obj) : counterDiv.insertBefore($obj);
+					} else {
+						// If a valid DOM id is passed, append/prepend counter to specified target 
+						if($(options.target).length) {
+							//options.append ? $(options.target).append(counterDiv) : $(options.target).prepend(counterDiv);
+							options.append ? counterDiv.insertAfter(options.target) : counterDiv.insertBefore(options.target);
+						} else {
+							// Default to 
+							options.append ? counterDiv.insertAfter($obj) : counterDiv.insertBefore($obj);
+						}
+					}
 					// Set $countObj jQuery object
 					$countObj = $('#' + counterID);
 
@@ -31,13 +58,13 @@
 					methods.bind($obj);
 				},
 				// Bind everything!
-				bind : function($obj) {
+				bind: function($obj) {
 					$obj.bind("keypress.counter keydown.counter keyup.counter blur.counter focus.counter change.counter paste.counter", methods.updateCounter);
 					$obj.bind("keydown.counter", methods.doStopTyping);
 					$obj.trigger('keydown');
 				},
 				// Enables uninterrupted typing (just counting)
-				isLimitless : function() {
+				isLimitless: function() {
 					if(options.goal === 'sky') {
 						// Override to count up
 						options.count = 'up';
@@ -48,7 +75,7 @@
 					}
 				},
 				/* Sets the appropriate message after counter */
-				setMsg : function() {
+				setMsg: function() {
 					// Show custom message
 					if(options.msg !== '') {
 						return options.msg;
@@ -70,39 +97,39 @@
 					this.text = this.text.split(' ');
 					this.chars = "s ( )".split(' ');
 					this.msg = null;
-					switch (options.type) {
-						case "char":
-							if(options.count === defaults.count && options.text) {
-								// x character(s) left
-								this.msg = this.text[0] + this.chars[1] + this.chars[0] + this.chars[2] + " " + this.text[2];
-							} else if(options.count === "up" && options.text) {
-								// x characters (x max)
-								this.msg = this.text[0] + this.chars[0] + " " + this.chars[1] + options.goal + " " + this.text[3] + this.chars[2];
-							}
-							break;
-						case "word":
-							if(options.count === defaults.count && options.text) {
-								// x word(s) left
-								this.msg = this.text[1] + this.chars[1] + this.chars[0] + this.chars[2] + " " + this.text[2];
-							} else if(options.count === "up" && options.text) {
-								// x word(s) (x max)
-								this.msg = this.text[1] + this.chars[1] + this.chars[0] + this.chars[2] + " " + this.chars[1] + options.goal + " " + this.text[3] + this.chars[2];
-							}
-							break;
-						default:
+					switch(options.type) {
+					case "char":
+						if(options.count === defaults.count && options.text) {
+							// x character(s) left
+							this.msg = this.text[0] + this.chars[1] + this.chars[0] + this.chars[2] + " " + this.text[2];
+						} else if(options.count === "up" && options.text) {
+							// x characters (x max)
+							this.msg = this.text[0] + this.chars[0] + " " + this.chars[1] + options.goal + " " + this.text[3] + this.chars[2];
+						}
+						break;
+					case "word":
+						if(options.count === defaults.count && options.text) {
+							// x word(s) left
+							this.msg = this.text[1] + this.chars[1] + this.chars[0] + this.chars[2] + " " + this.text[2];
+						} else if(options.count === "up" && options.text) {
+							// x word(s) (x max)
+							this.msg = this.text[1] + this.chars[1] + this.chars[0] + this.chars[2] + " " + this.chars[1] + options.goal + " " + this.text[3] + this.chars[2];
+						}
+						break;
+					default:
 					}
 					return this.msg;
 				},
 				/* Returns the amount of words passed in the val argument
 				 * @param val Words to count */
-				getWords : function(val) {
+				getWords: function(val) {
 					if(val !== "") {
 						return $.trim(val).replace(/\s+/g, " ").split(" ").length;
 					} else {
 						return 0;
 					}
 				},
-				updateCounter : function(e) {
+				updateCounter: function(e) {
 					// Save reference to $(this)
 					var $this = $(this);
 					// Is the goal amount passed? (most common when pasting)
@@ -150,7 +177,7 @@
 					return;
 				},
 				/* Stops the ability to type */
-				doStopTyping : function(e) {
+				doStopTyping: function(e) {
 					// backspace, delete, tab, left, up, right, down, end, home, spacebar
 					var keys = [46, 8, 9, 35, 36, 37, 38, 39, 40, 32];
 					if(methods.isGoalReached(e)) {
@@ -169,24 +196,24 @@
 					}
 				},
 				/* Checks to see if the goal number has been reached */
-				isGoalReached : function(e, _goal) {
+				isGoalReached: function(e, _goal) {
 					if(noLimit) {
 						return false;
 					}
 					// Counting down
 					if(options.count === defaults.count) {
 						_goal = 0;
-						return (countIndex <= _goal ) ? true : false;
+						return(countIndex <= _goal) ? true : false;
 					} else {
 						// Counting up
 						_goal = options.goal;
-						return (countIndex >= _goal ) ? true : false;
+						return(countIndex >= _goal) ? true : false;
 					}
 				},
 				/* Removes extra words when the amount of words in the input go over the desired goal.
 				 * @param {Number} numOfWords Amount of words you would like shown
 				 * @param {String} text The full text to condense */
-				wordStrip : function(numOfWords, text) {
+				wordStrip: function(numOfWords, text) {
 					var wordCount = text.replace(/\s+/g, ' ').split(' ').length;
 
 					// Get the word count by counting the spaces (after eliminating trailing white space)
@@ -202,7 +229,7 @@
 					}
 				},
 				/* If the goal is passed, trim the chars/words down to what is allowed. Also, reset the counter. */
-				passedGoal : function($obj) {
+				passedGoal: function($obj) {
 					var userInput = $obj.val();
 					if(options.type === 'word') {
 						$obj.val(methods.wordStrip(options.goal, userInput));

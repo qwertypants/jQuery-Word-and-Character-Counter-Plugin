@@ -61,6 +61,12 @@
         count : 'up',
         translation : 'caracter palavra restante m&agrave;x'
     });
+
+
+    $('#append-target').counter({
+        append: false,
+        target: '#append-here'
+    });
     
     $("a[target^='_blank']").append("<span class='ui-icon ui-icon-newwin'>&nbsp;</span>");
 
