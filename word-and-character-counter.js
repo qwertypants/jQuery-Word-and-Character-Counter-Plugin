@@ -1,4 +1,4 @@
-/*! jQuery.counter.js (jQuery Character and Word Counter plugin)
+/*! word-and-character-counter.js
  v2.3 (c) Wilkins Fernandez
  MIT License
  */
