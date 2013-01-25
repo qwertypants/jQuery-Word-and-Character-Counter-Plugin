@@ -8,7 +8,8 @@
     "name": "Wilkins Fernandez"
   },
   "licenses": [{
-    "type": "MIT"
+    "type": "MIT",
+    "url": "https://raw.github.com/n0mad01/adjustVideo/master/MIT-LICENSE.txt"
   }],
   "bugs": "https://github.com/qwertypants/jQuery-Word-and-Character-Counter-Plugin/issues",
   "homepage": "https://github.com/qwertypants/jQuery-Word-and-Character-Counter-Plugin",
