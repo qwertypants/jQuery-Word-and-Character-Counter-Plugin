@@ -43,7 +43,7 @@
 					    options.append ? counterDiv.insertAfter($obj) : counterDiv.insertBefore($obj);
 					} 
 					else { // append/prepend counter to specified target
-					    options.append ? counterDiv.insertAfter(options.target) : counterDiv.insertBefore(options.target);
+					    options.append ? $(options.target).append(counterDiv) : $(options.target).prepend(counterDiv);
 					}
 					// Set $countObj jQuery object
 					$countObj = $('#' + counterID);
