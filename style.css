@@ -383,6 +383,6 @@ td ul {margin:0;}
   border:1px solid red; padding:20px; width:30%; margin:5%;
 }
 #append-here{
-  width:100px; height:100px; border:1px dotted #ccc; margin:20px auto;
+  width:100px; height:100px; border:1px dotted #ccc;
   font-size:11px; padding:10px; text-align: center; position: relative;
 }
