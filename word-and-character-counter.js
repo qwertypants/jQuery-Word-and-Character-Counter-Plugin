@@ -39,17 +39,11 @@
 
 					// Insert counter after or before text area/box
 					var counterDiv = $('<div/>').attr('id', objID + '_counter').html("<span id=" + counterID + "/> " + methods.setMsg());
-					if(!options.target) {
-						options.append ? counterDiv.insertAfter($obj) : counterDiv.insertBefore($obj);
-					} else {
-						// If a valid DOM id is passed, append/prepend counter to specified target 
-						if($(options.target).length) {
-							//options.append ? $(options.target).append(counterDiv) : $(options.target).prepend(counterDiv);
-							options.append ? counterDiv.insertAfter(options.target) : counterDiv.insertBefore(options.target);
-						} else {
-							// Default to 
-							options.append ? counterDiv.insertAfter($obj) : counterDiv.insertBefore($obj);
-						}
+					if(!options.target || !$(options.target).length) { //target is not specified or invalid
+					    options.append ? counterDiv.insertAfter($obj) : counterDiv.insertBefore($obj);
+					} 
+					else { // append/prepend counter to specified target
+					    options.append ? counterDiv.insertAfter(options.target) : counterDiv.insertBefore(options.target);
 					}
 					// Set $countObj jQuery object
 					$countObj = $('#' + counterID);
