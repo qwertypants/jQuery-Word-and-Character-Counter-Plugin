@@ -38,15 +38,14 @@
 					methods.isLimitless();
 
 					// Insert counter after or before text area/box
-					var counterDiv = $('<div/>').attr('id', objID + '_counter').html("<span id=" + counterID + "/> " + methods.setMsg());
+					$countObj = $("<span id=" + counterID + "/>");
+					var counterDiv = $('<div/>').attr('id', objID + '_counter').append($countObj).append(" " + methods.setMsg());
 					if(!options.target || !$(options.target).length) { //target is not specified or invalid
 					    options.append ? counterDiv.insertAfter($obj) : counterDiv.insertBefore($obj);
 					} 
 					else { // append/prepend counter to specified target
 					    options.append ? $(options.target).append(counterDiv) : $(options.target).prepend(counterDiv);
 					}
-					// Set $countObj jQuery object
-					$countObj = $('#' + counterID);
 
 					// Bind methods to events
 					methods.bind($obj);
