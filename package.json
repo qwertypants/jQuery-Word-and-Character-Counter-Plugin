@@ -1,0 +1,29 @@
+{
+  "name": "jQuery-Word-and-Character-Counter-Plugin",
+  "version": "2.3.5",
+  "description": "This word and character counter plugin allows you to count characters or words, up or down. You can set a minimum or maximum goal for the counter to reach. And sweet, sweet options.",
+  "main": "jquery.word-and-character-counter.min.js",
+  "dependencies": {
+    "uglify-js": "^2.4.16"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://qwertypants@github.com/qwertypants/jQuery-Word-and-Character-Counter-Plugin"
+  },
+  "keywords": [
+    "counter",
+    "word",
+    "character",
+    "jquery-plugin"
+  ],
+  "author": "Wilkins Fernandez <wilkinsf@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/qwertypants/jQuery-Word-and-Character-Counter-Plugin/issues"
+  },
+  "homepage": "https://github.com/qwertypants/jQuery-Word-and-Character-Counter-Plugin"
+}
