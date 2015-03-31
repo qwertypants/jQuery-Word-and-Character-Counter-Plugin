@@ -22,7 +22,9 @@ MIT License
         // Provide translate text for counter message
         translation: '',
         // Custom counter message
-        msg: ''
+        msg: '',
+        // Custom counter container class
+        container_class: ''
       };
       var $countObj = '',
         countIndex = '',
@@ -42,6 +44,10 @@ MIT License
           $countObj = $("<span id=" + counterID + "/>");
           var counterDiv = $('<div/>').attr('id', objID + '_counter').append($countObj)
             .append(" " + methods.setMsg());
+          if (options.container_class && options.container_class.length) {
+            // Add the custom container class if one is specified
+            counterDiv.addClass(options.container_class);
+          }
           if (!options.target || !$(options.target).length) {
             // Target is not specified or invalid
             options.append ? counterDiv.insertAfter($obj) : counterDiv.insertBefore(
