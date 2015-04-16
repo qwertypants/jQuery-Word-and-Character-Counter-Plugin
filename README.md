@@ -12,3 +12,19 @@ For example, if the input you want to count is called "awesome", the id of the d
 Simple? You bet your ass it is.
 
 [Demos and code samples](http://qwertypants.github.io/jQuery-Word-and-Character-Counter-Plugin/)
+
+
+## Contributing
+OMG your awesome. 
+
+`npm install` to make sure you have everything you need.
+
+### Code Style
+Be nice and follow the [jsrc](http://jscs.info/overview.html) rules.
+If your text editor doesn't use it automatically, you can run it using `jscs jquery.word-and-character-counter.js`.
+
+
+**Minify it!**
+
+Bytes are precious. Use `uglifyjs word-and-character-counter.js -o jquery.word-and-character-counter.min.js` to minify the output file. 
+
