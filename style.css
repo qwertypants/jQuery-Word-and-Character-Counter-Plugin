@@ -386,3 +386,19 @@ td ul {margin:0;}
   width:100px; height:100px; border:1px dotted #ccc;
   font-size:11px; padding:10px; text-align: center; position: relative;
 }
+
+.ui-tabs a {
+  font-size: 12px;
+}
+
+.ui-icon-newwin {
+  display: inline-block;
+}
+
+.wrapper {
+  font-size: 11px;
+  border: 1px solid green;
+  border-radius: 50px;
+  width: 40%;
+  padding: 10px;
+}

@@ -42,6 +42,9 @@
 						<a href="#appTar">append/target</a>
 					</li>
 					<li>
+						<a href="#containerClass">container class</a>
+					</li>
+					<li>
 						<a href="#contact">info</a>
 					</li>
 				</ul>
@@ -395,7 +398,7 @@
 					<textarea cols="60" rows="10" id="keepCountingWord"></textarea>
 				</div>
 				<div id="appTar">
-					Courtesy of <a href="https://github.com/Gator92">Gator92</a>
+					Courtesy of <a href="https://github.com/Gator92" target="_blank">Gator92</a>
 					<b>New in 2.1</b><br>
 					<h3>Append/Target</h3>
 					<p>With these new options, you can now place the counter anywhere on the page.</p>
@@ -487,7 +490,31 @@
 						Thank you.
 					</p>
 				</div>
+				<div id="containerClass">
+					Courtesy of <a href="https://github.com/thomasgohard" target="_blank">thomasgohard</a> via <a href="https://github.com/qwertypants/jQuery-Word-and-Character-Counter-Plugin/pull/11" target="_blank">pull #11</a>
 
+					<p>Let's say you have multilple counters on a single page and want them all to be styled the same way. In this case, we have a class named 'wrapper'. All you need to do is set the <code>containerClass</code> property to the name of the class.</p>
+					<p>This will add the classname to the counter, giving you an easy way to style multiple counters.</p>
+					<pre class="brush: css;">
+			            .wrapper {
+						  font-size: 11px;
+						  border: 1px solid green;
+						  border-radius: 50px;
+						  width: 40%;
+						  padding: 10px;
+						}
+					</pre>
+					<pre class="brush: js;">
+			            $('#container-class').counter( {
+						   containerClass: 'wrapper'
+						});
+					</pre>
+
+					<div class="sample">
+						<textarea cols="40" rows="5" id="container-class"></textarea>
+					</div>
+
+				</div>
 
 			</div>
 
