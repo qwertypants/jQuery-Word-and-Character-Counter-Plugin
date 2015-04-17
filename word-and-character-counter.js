@@ -1,5 +1,5 @@
 /*! word-and-character-counter.js
-v2.5 (c) Wilkins Fernandez
+v2.4 (c) Wilkins Fernandez
 MIT License
 */
 (function ($) {
