@@ -1,6 +1,6 @@
 // jscs:disable maximumLineLength
 /*! jquery.word-and-character-counter.js
- v2.6 ( c ) Wilkins Fernandez
+ v2.4 ( c ) Wilkins Fernandez
  MIT License
  */
 (  function(  $  ) {
