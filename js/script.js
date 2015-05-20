@@ -65,7 +65,7 @@
         append: false,
         target: "#append-here"
     } );
-    $( "#container-class" ).counter( {
+    $( "#myInput" ).counter( {
        containerClass: "wrapper"
     } );
 
