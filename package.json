@@ -3,10 +3,9 @@
   "version": "2.4.0",
   "description": "This word and character counter plugin allows you to count characters or words, up or down. You can set a minimum or maximum goal for the counter to reach. And sweet, sweet options.",
   "main": "jquery.word-and-character-counter.min.js",
-  "dependencies": {
+  "devDependencies": {
     "uglify-js": "^2.4.16"
   },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
