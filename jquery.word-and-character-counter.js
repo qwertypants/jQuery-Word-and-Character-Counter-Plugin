@@ -1,8 +1,4 @@
 // jscs:disable maximumLineLength
-/*! jquery.word-and-character-counter.js
- v2.4 ( c ) Wilkins Fernandez
- MIT License
- */
 (function ($) {
   "use strict";
   $.fn.extend({
@@ -256,12 +252,12 @@
           // Counting down
           if (options.count === defaults.count) {
             _goal = 0;
-            return ( countIndex <= _goal );
+            return (countIndex <= _goal);
           } else {
 
             // Counting up
             _goal = options.goal;
-            return ( countIndex >= _goal );
+            return (countIndex >= _goal);
           }
         },
         /* Removes extra words when the amount of words in
