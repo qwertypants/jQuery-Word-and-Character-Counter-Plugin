@@ -1,25 +1,25 @@
-module.exports = function(grunt) {
+module.exports = function (grunt) {
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
     // Lint definitions
     jscs: {
-      main: "word-and-character-counter.js",
+      main: "jquery.word-and-character-counter.js",
       options: {
         config: ".jscsrc"
       }
     },
     uglify: {
       options: {
-        banner: '/*! <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> */\n'
+        banner: '/*! <%= pkg.name %> <%= pkg.version %> <%= pkg.repository.url %> <%= grunt.template.today("dd-mm-yyyy") %> */\n'
       },
       dist: {
         files: {
-          'jquery.word-and-character-counter.min.js': [ 'word-and-character-counter.js' ]
+          'jquery.word-and-character-counter.min.js': ['jquery.word-and-character-counter.js']
         }
       }
-    },
+    }
   });
 
   grunt.loadNpmTasks("grunt-jscs");
