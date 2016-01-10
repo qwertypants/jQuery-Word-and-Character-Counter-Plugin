@@ -1,6 +1,6 @@
 {
   "name": "jquery-word-and-character-counter-plugin",
-  "version": "2.4.0",
+  "version": "2.4.1",
   "description": "This word and character counter plugin allows you to count characters or words, up or down. You can set a minimum or maximum goal for the counter to reach. And sweet, sweet options.",
   "main": "jquery.word-and-character-counter.min.js",
   "devDependencies": {
