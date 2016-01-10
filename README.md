@@ -20,7 +20,7 @@ OMG you're awesome.
 
 Use the `gh-pages` branch for development. Run `npm install` to install the lint/build packages. 
 
-The source file is `js/jquery.word-and-character-counter.js
+The source file is `./jquery.word-and-character-counter.js
 
 Build with `grunt` if you have it installed globally, otherwise `npm run build`.
 
