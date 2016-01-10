@@ -1,5 +1,5 @@
 /*! word-and-character-counter.js
-v2.5 (c) Wilkins Fernandez
+v2.4 (c) Wilkins Fernandez
 MIT License
 */
 (function ($) {
@@ -22,7 +22,9 @@ MIT License
         // Provide translate text for counter message
         translation: '',
         // Custom counter message
-        msg: ''
+        msg: '',
+        // Custom counter container class
+        containerClass: ''
       };
       var $countObj = '',
         countIndex = '',
@@ -42,6 +44,10 @@ MIT License
           $countObj = $("<span id=" + counterID + "/>");
           var counterDiv = $('<div/>').attr('id', objID + '_counter').append($countObj)
             .append(" " + methods.setMsg());
+          if (options.containerClass && options.containerClass.length) {
+            // Add the custom container class if one is specified
+            counterDiv.addClass(options.containerClass);
+          }
           if (!options.target || !$(options.target).length) {
             // Target is not specified or invalid
             options.append ? counterDiv.insertAfter($obj) : counterDiv.insertBefore(
