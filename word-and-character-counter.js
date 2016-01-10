@@ -24,7 +24,7 @@ MIT License
         // Custom counter message
         msg: '',
         // Custom counter container class
-        container_class: ''
+        containerClass: ''
       };
       var $countObj = '',
         countIndex = '',
@@ -44,9 +44,9 @@ MIT License
           $countObj = $("<span id=" + counterID + "/>");
           var counterDiv = $('<div/>').attr('id', objID + '_counter').append($countObj)
             .append(" " + methods.setMsg());
-          if (options.container_class && options.container_class.length) {
+          if (options.containerClass && options.containerClass.length) {
             // Add the custom container class if one is specified
-            counterDiv.addClass(options.container_class);
+            counterDiv.addClass(options.containerClass);
           }
           if (!options.target || !$(options.target).length) {
             // Target is not specified or invalid

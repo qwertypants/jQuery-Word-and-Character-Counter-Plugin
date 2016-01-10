@@ -15,16 +15,23 @@ Simple? You bet your ass it is.
 
 
 ## Contributing
-OMG your awesome. 
+
+OMG you're awesome. 
 
 `npm install` to make sure you have everything you need.
 
-### Code Style
-Be nice and follow the [jsrc](http://jscs.info/overview.html) rules.
-If your text editor doesn't use it automatically, you can run it using `jscs jquery.word-and-character-counter.js`.
+Build with `grunt` if you have it installed globally, otherwise `npm run build`.
 
+### Code Style
+
+Be nice and follow the [jsrc](http://jscs.info/overview.html) rules. These
+are checked by the Grunt build.
+
+If your text editor doesn't use it automatically, you can run it using `jscs jquery.word-and-character-counter.js`.
 
 **Minify it!**
 
-Bytes are precious. Use `uglifyjs word-and-character-counter.js -o jquery.word-and-character-counter.min.js` to minify the output file. 
+Bytes are precious. Use `uglifyjs word-and-character-counter.js -o
+jquery.word-and-character-counter.min.js` to minify the output file. This
+is run automatically by the Grunt build.
 
