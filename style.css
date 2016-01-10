@@ -389,6 +389,9 @@ td ul {margin:0;}
   font-size:11px; padding:10px; text-align: center; position: relative;
 }
 
+.ui-tabs p a {
+    font-size: 16px;
+}
 .ui-tabs a {
   font-size: 12px;
 }
