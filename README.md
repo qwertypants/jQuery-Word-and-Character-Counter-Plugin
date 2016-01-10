@@ -18,7 +18,9 @@ Simple? You bet your ass it is.
 
 OMG you're awesome. 
 
-`npm install` to make sure you have everything you need.
+Use the `gh-pages` branch for development. Run `npm install` to install the lint/build packages. 
+
+The source file is `js/jquery.word-and-character-counter.js
 
 Build with `grunt` if you have it installed globally, otherwise `npm run build`.
 
@@ -34,4 +36,3 @@ If your text editor doesn't use it automatically, you can run it using `jscs jqu
 Bytes are precious. Use `uglifyjs word-and-character-counter.js -o
 jquery.word-and-character-counter.min.js` to minify the output file. This
 is run automatically by the Grunt build.
-
