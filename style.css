@@ -361,7 +361,9 @@ table td,table th{border:1px solid #000;text-align:left;padding:5px}
 tr.alt td{background-color:#2C4359; color:#fff}
 tr.over td{background-color:#FF5E99; color:#fff}
 
-.sample{width:700px}
+.sample {
+  width: 750px
+}
 .sample p{float:right;width:300px;position:relative;font-size:12px;top:-10px}
 .sample p span{color:Red}
 #nav{height:100px;width:100%;border-bottom:5px solid #fff;font-size:14px;font-family:Georgia}
