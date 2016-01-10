@@ -234,12 +234,7 @@
                 return false;
 
                 // Counting words, only allow backspace & delete
-              } else if (e.keyCode !== keys[9] && e.keyCode !== keys[1] && options.type !=
-                  defaults.type) {
-                return true;
-              } else {
-                return false;
-              }
+              } else return (e.keyCode !== keys[9] && e.keyCode !== keys[1] && options.type != defaults.type);
             }
           }
         },
