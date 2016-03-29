@@ -94,7 +94,7 @@
             return noLimit;
           }
         },
-        /* Sets the appropriate message after counter */
+        // Sets the appropriate message after counter
         setMsg: function () {
 
           // Show custom message
@@ -161,12 +161,13 @@
         },
         updateCounter: function (e) {
 
-          // Save reference to $( this )
-          var $this = $(this);
+          // If the element has the contentedtiable attribute, use the text value.
+          // Otherwise use an input value
+          var $value = ($(this).attr("contentEditable") == "true") ? $(this).text() : $(this).val();
 
           // Is the goal amount passed? ( most common when pasting )
           if (countIndex < 0 || countIndex > options.goal) {
-            methods.passedGoal($this);
+            methods.passedGoal($(this));
           }
 
           // Counting characters...
@@ -174,7 +175,7 @@
 
             // ...down
             if (options.count === defaults.count) {
-              countIndex = options.goal - $this.val().length;
+              countIndex = options.goal - $value.length;
 
               // Prevent negative counter
               if (countIndex <= 0) {
@@ -185,7 +186,7 @@
 
               // ...up
             } else if (options.count === "up") {
-              countIndex = $this.val().length;
+              countIndex = $value.length;
               $countObj.text(countIndex);
             }
 
@@ -196,7 +197,7 @@
             if (options.count === defaults.count) {
 
               // Count words
-              countIndex = methods.getWords($this.val());
+              countIndex = methods.getWords($value);
               if (countIndex <= options.goal) {
 
                 // Subtract
@@ -212,7 +213,7 @@
 
               // ...up
             } else if (options.count === "up") {
-              countIndex = methods.getWords($this.val());
+              countIndex = methods.getWords($value);
               $countObj.text(countIndex);
             }
           }
@@ -234,7 +235,9 @@
                 return false;
 
                 // Counting words, only allow backspace & delete
-              } else return (e.keyCode !== keys[9] && e.keyCode !== keys[1] && options.type != defaults.type);
+              } else {
+                return (e.keyCode !== keys[9] && e.keyCode !== keys[1] && options.type != defaults.type);
+              }
             }
           }
         },
@@ -274,7 +277,7 @@
             return $.trim(text.join(" "));
           }
         },
-        /* If the goal is passed, trim the chars/words down to what is allowed. Also, reset the counter. */
+        // If the goal is passed, trim the chars/words down to what is allowed. Also, reset the counter.
         passedGoal: function ($obj) {
           var userInput = $obj.val();
           if (options.type === "word") {
