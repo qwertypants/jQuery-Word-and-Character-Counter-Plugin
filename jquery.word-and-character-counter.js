@@ -50,7 +50,7 @@
 
           // Insert counter after or before text area/box
           $countObj = $("<span id=" + counterID + "/>");
-          var counterDiv = $("<div/>").attr("id", objID + "_counter").append($countObj)
+          var counterDiv = $("<div role='status'/>").attr("id", objID + "_counter").append($countObj)
               .append(" " + methods.setMsg());
           if (options.containerClass && options.containerClass.length) {
 
@@ -68,6 +68,9 @@
                 $(options.target).append(counterDiv) :
                 $(options.target).prepend(counterDiv);
           }
+
+          // Set aria-controls attribute of text area/box
+          $obj.attr('aria-controls', objID + '_counter');
 
           // Bind methods to events
           methods.bind($obj);

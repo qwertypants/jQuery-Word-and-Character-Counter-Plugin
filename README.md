@@ -14,6 +14,11 @@ Simple? You bet your ass it is.
 [Demos and code samples](http://qwertypants.github.io/jQuery-Word-and-Character-Counter-Plugin/)
 
 
+```
+npm install jquery-word-and-character-counter-plugin
+```
+
+
 ## Contributing
 
 OMG you're awesome. 
