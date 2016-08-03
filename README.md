@@ -38,6 +38,6 @@ If your text editor doesn't use it automatically, you can run it using `jscs jqu
 
 **Minify it!**
 
-Bytes are precious. Use `uglifyjs word-and-character-counter.js -o
+Bytes are precious. Use `uglifyjs jquery.word-and-character-counter.js -o
 jquery.word-and-character-counter.min.js` to minify the output file. This
 is run automatically by the Grunt build.
