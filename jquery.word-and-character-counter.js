@@ -78,10 +78,10 @@
 
         // Bind everything!
         bind: function ($obj) {
-          $obj.bind(
+          $obj.on(
               "keypress.counter keydown.counter keyup.counter blur.counter focus.counter change.counter paste.counter",
               methods.updateCounter);
-          $obj.bind("keydown.counter", methods.doStopTyping);
+          $obj.on("keydown.counter", methods.doStopTyping);
           $obj.trigger("keydown");
         },
 
