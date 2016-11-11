@@ -213,7 +213,7 @@
                 </code>
                 method on a jQuery object.
             </p>
-					<pre class="brush: js;">
+            <pre class="brush: js;">
             			$("#default_usage").counter();</pre>
             <p>
                 Start typing!
@@ -238,7 +238,7 @@
                 </code>
                 option.
             </p>
-					<pre class="brush: js;">
+            <pre class="brush: js;">
             			$("#default_usage_num_only").counter({
 							text: false
 						});       			</pre>
@@ -257,7 +257,7 @@
                 By default, this plugin will <b>count characters</b>. Also by default, it will <b>count down</b>. Lets
                 see how counting up to ten will look:
             </p>
-					<pre class="brush: js;">
+            <pre class="brush: js;">
 			            $("#charUp").counter({
 				            count: 'up',
 				            goal: 10
@@ -282,7 +282,7 @@
                 </code>
                 like so:
             </p>
-					<pre class="brush: js;">
+            <pre class="brush: js;">
 					$("#wordDown").counter({
 					    type: 'word',
 					    goal: 20
@@ -303,7 +303,7 @@
             <p>
                 Similarly, if you want to count words up, you would set the <b>count</b> option do <i>up</i> like so:
             </p>
-					<pre class="brush: js;">
+            <pre class="brush: js;">
 						$("#wordUp").counter({
 						    type: 'word',
 						    goal: 20,
@@ -342,7 +342,7 @@
             <p>
                 Then, all you need to do is pass them as a String (in order) as the option 'translation'.
             </p>
-					<pre class="brush: js;">
+            <pre class="brush: js;">
 				        $("#translate_words").counter({
 					        goal : 10,
 					        type : 'word',
@@ -351,7 +351,7 @@
             <div class="sample">
                 <textarea id="translate_words" cols="40" rows="5"></textarea>
             </div>
-					<pre class="brush: js;">
+            <pre class="brush: js;">
 				         $("#translate_char").counter({
 					        goal : 10,
 					        count : 'up',
@@ -366,7 +366,7 @@
             <p>
                 Let's say you don't like the default text appended to the counter. Simple, just change it.
             </p>
-					<pre class="brush: js;">
+            <pre class="brush: js;">
 				        $("#custom_msg").counter({
 				            msg: 'words left before you fall into a pit of emptiness.'
 				        });</pre>
@@ -402,13 +402,13 @@
                 </code>
                 option.
             </p>
-					<pre class="brush: js;">
+            <pre class="brush: js;">
 					$("#keepCountingChar").counter({
 						goal: 'sky'
 					});</pre>
             <textarea cols="60" rows="10" id="keepCountingChar"></textarea>
 
- 					<pre class="brush: js;">
+            <pre class="brush: js;">
 					$("#keepCountingWord").counter({
 						goal: 'sky',
 						type : 'word',
@@ -425,7 +425,7 @@
                 after/<code>true</code>) by setting a boolean value to the <code>append</code> property.</p>
             <p>You can also target any element on the page to insert the counter by passing a jQuery selector to the
                 <code>target</code> property.</p>
-					<pre class="brush: js;">
+            <pre class="brush: js;">
 			            $('#append-target').counter({
 					        append: false,
 					        target: '#append-here'
@@ -567,7 +567,7 @@
                 this case, we have a class named 'wrapper'. All you need to do is set the <code>containerClass</code>
                 property to the name of the class.</p>
             <p>This will add the classname to the counter, giving you an easy way to style multiple counters.</p>
-					<pre class="brush: css;">
+            <pre class="brush: css;">
 			            .wrapper {
 						  font-size: 11px;
 						  border: 1px solid green;
@@ -576,7 +576,7 @@
 						  padding: 10px;
 						}
 					</pre>
-					<pre class="brush: js;">
+            <pre class="brush: js;">
 			            $('#myInput').counter( {
 						   containerClass: 'wrapper'
 						});
@@ -591,9 +591,11 @@
     </div>
 
 </div>
+<script src="https://code.jquery.com/jquery-3.1.1.js"
+        integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+        crossorigin="anonymous"></script>
+<script type="text/javascript" src="http://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
 <script type="text/javascript" src="js/load.js"></script>
 </body>
 </html>
