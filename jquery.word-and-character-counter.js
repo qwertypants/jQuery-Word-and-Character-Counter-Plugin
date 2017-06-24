@@ -33,17 +33,17 @@
         containerClass: ""
       };
       var $countObj = "",
-          countIndex = "",
-          noLimit = false,
+        countIndex = "",
+        noLimit = false,
 
-      // Pass {} as first argument to preserve defaults/options for comparison
-          options = $.extend({}, defaults, options);
+        // Pass {} as first argument to preserve defaults/options for comparison
+        options = $.extend({}, defaults, options);
 
       // Adds the counter to the page and binds counter to user input fields
       var methods = {
         init: function ($obj) {
           var objID = $obj.attr("id"),
-              counterID = objID + "_count";
+            counterID = objID + "_count";
 
           // Check if unlimited typing is enabled
           methods.isLimitless();
@@ -51,7 +51,7 @@
           // Insert counter after or before text area/box
           $countObj = $("<span id=" + counterID + "/>");
           var counterDiv = $("<div role='status'/>").attr("id", objID + "_counter").append($countObj)
-              .append(" " + methods.setMsg());
+            .append(" " + methods.setMsg());
           if (options.containerClass && options.containerClass.length) {
 
             // Add the custom container class if one is specified
@@ -65,8 +65,8 @@
 
             // Append/prepend counter to specified target
             options.append ?
-                $(options.target).append(counterDiv) :
-                $(options.target).prepend(counterDiv);
+              $(options.target).append(counterDiv) :
+              $(options.target).prepend(counterDiv);
           }
 
           // Set aria-controls attribute of text area/box
@@ -79,8 +79,8 @@
         // Bind everything!
         bind: function ($obj) {
           $obj.on(
-              "keypress.counter keydown.counter keyup.counter blur.counter focus.counter change.counter paste.counter",
-              methods.updateCounter);
+            "keypress.counter keydown.counter keyup.counter blur.counter focus.counter change.counter paste.counter",
+            methods.updateCounter);
           $obj.on("keydown.counter", methods.doStopTyping);
           $obj.trigger("keydown");
         },
@@ -128,12 +128,12 @@
 
                 // x character( s ) left
                 this.msg = this.text[0] + this.chars[1] + this.chars[0] + this.chars[2] +
-                    " " + this.text[2];
+                  " " + this.text[2];
               } else if (options.count === "up" && options.text) {
 
                 // x characters ( x max )
                 this.msg = this.text[0] + this.chars[0] + " " + this.chars[1] + options.goal +
-                    " " + this.text[3] + this.chars[2];
+                  " " + this.text[3] + this.chars[2];
               }
               break;
             case "word":
@@ -141,12 +141,12 @@
 
                 // x word( s ) left
                 this.msg = this.text[1] + this.chars[1] + this.chars[0] + this.chars[2] +
-                    " " + this.text[2];
+                  " " + this.text[2];
               } else if (options.count === "up" && options.text) {
 
                 // x word( s ) ( x max )
                 this.msg = this.text[1] + this.chars[1] + this.chars[0] + this.chars[2] +
-                    " " + this.chars[1] + options.goal + " " + this.text[3] + this.chars[2];
+                  " " + this.chars[1] + options.goal + " " + this.text[3] + this.chars[2];
               }
               break;
             default:
@@ -230,12 +230,15 @@
 
             // NOTE: // Using !$.inArray( e.keyCode, keys as a condition causes delays
             if (e.keyCode !== keys[0] && e.keyCode !== keys[1] && e.keyCode !== keys[2] &&
-                e.keyCode !== keys[3] && e.keyCode !== keys[4] && e.keyCode !== keys[5] &&
-                e.keyCode !== keys[6] && e.keyCode !== keys[7] && e.keyCode !== keys[8]) {
+              e.keyCode !== keys[3] && e.keyCode !== keys[4] && e.keyCode !== keys[5] &&
+              e.keyCode !== keys[6] && e.keyCode !== keys[7] && e.keyCode !== keys[8]) {
 
               // Stop typing when counting characters
               if (options.type === defaults.type) {
-                return false;
+                // Allows command/control
+                if (!e.keyCode === 49 || !e.keyCode === 17) {
+                  return false;
+                }
 
                 // Counting words, only allow backspace & delete
               } else {
